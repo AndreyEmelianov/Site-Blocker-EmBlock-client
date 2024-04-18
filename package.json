@@ -1,7 +1,11 @@
 {
-  "name": "client",
+  "name": "site-blocker-EmBlock-client",
   "version": "0.1.0",
   "private": true,
+  "author": {
+    "name": "Andrey Emelianov",
+    "email": "a-emelianoff@mail.ru"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
