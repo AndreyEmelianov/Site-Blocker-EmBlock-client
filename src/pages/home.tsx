@@ -6,6 +6,8 @@ import { UiButton } from "@/shared/ui/ui-button";
 import { UiTextField } from "@/shared/ui/ui-text-field";
 import { UiSelectField } from "@/shared/ui/ui-select-field";
 import { UiLink } from "@/shared/ui/ui-link";
+import { UiSpinner } from "@/shared/ui/ui-spinner";
+import { UiPageSpinner } from "@/shared/ui/ui-page-spinner";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -31,6 +33,8 @@ export function HomePage() {
       <UiTextField />
       <UiSelectField options={[{ value: "1", label: "label 1" }]} />
       <UiLink href="/">Go go</UiLink>
+      <UiSpinner className="text-cyan-500 w-20 h-20" />
+      <UiPageSpinner />
     </main>
   );
 }
