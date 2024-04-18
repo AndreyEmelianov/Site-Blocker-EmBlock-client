@@ -9,17 +9,12 @@ import { UiHeader } from "@/shared/ui/ui-header";
 import { SignOutButton } from "@/features/auth";
 
 export function HomePage() {
-  const { data } = useQuery({
-    queryKey: ["session"],
-    queryFn: () => authControllerGetSessionInfo(),
-  });
-
   return (
     <main className={`min-h-screen`}>
       <UiHeader
         right={
           <div>
-            {data?.email} <SignOutButton />
+            <SignOutButton />
           </div>
         }
       />
