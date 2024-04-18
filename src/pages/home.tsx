@@ -3,6 +3,8 @@ import { Inter } from "next/font/google";
 import { authControllerGetSessionInfo } from "@/shared/api/generated";
 import { useQuery } from "@tanstack/react-query";
 import { UiButton } from "@/shared/ui/ui-button";
+import { UiTextField } from "@/shared/ui/ui-text-field";
+import { UiSelectField } from "@/shared/ui/ui-select-field";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -23,6 +25,10 @@ export function HomePage() {
       <UiButton disabled variant="primary">
         disabled
       </UiButton>
+      <UiTextField label="filds" inputProps={{ placeholder: "email" }} />
+      <UiTextField error="err" inputProps={{ placeholder: "email" }} />
+      <UiTextField />
+      <UiSelectField options={[{ value: "1", label: "label 1" }]} />
     </main>
   );
 }
