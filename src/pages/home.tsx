@@ -5,6 +5,7 @@ import { useQuery } from "@tanstack/react-query";
 import { UiButton } from "@/shared/ui/ui-button";
 import { UiTextField } from "@/shared/ui/ui-text-field";
 import { UiSelectField } from "@/shared/ui/ui-select-field";
+import { UiLink } from "@/shared/ui/ui-link";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -29,6 +30,7 @@ export function HomePage() {
       <UiTextField error="err" inputProps={{ placeholder: "email" }} />
       <UiTextField />
       <UiSelectField options={[{ value: "1", label: "label 1" }]} />
+      <UiLink href="/">Go go</UiLink>
     </main>
   );
 }
