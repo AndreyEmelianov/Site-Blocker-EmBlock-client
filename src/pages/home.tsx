@@ -1,24 +1,17 @@
-import { UiButton } from "@/shared/ui/ui-button";
-import { UiTextField } from "@/shared/ui/ui-text-field";
-import { UiSelectField } from "@/shared/ui/ui-select-field";
-import { UiLink } from "@/shared/ui/ui-link";
-import { UiSpinner } from "@/shared/ui/ui-spinner";
 import { UiHeader } from "@/shared/ui/ui-header";
-import { SignOutButton } from "@/features/auth";
-import { useSessionQuery } from "@/entities/session";
+import { ToggleBlockingButton } from "@/features/toggle-blocking";
+import { Profile } from "@/widgets/profile";
 
 export function HomePage() {
-  const { data } = useSessionQuery();
   return (
-    <main className={`min-h-screen`}>
-      <UiHeader
-        right={
-          <div>
-            {data?.email}
-            <SignOutButton />
-          </div>
-        }
-      />
-    </main>
+    <div className={`min-h-screen flex flex-col`}>
+      <UiHeader right={<Profile />} />
+      <div className="grid grid-cols-[200px_1fr]">
+        <aside className="px-5 pt-12">
+          <ToggleBlockingButton />
+        </aside>
+        <main>main</main>
+      </div>
+    </div>
   );
 }
