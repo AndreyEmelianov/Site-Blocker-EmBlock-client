@@ -1,8 +1,11 @@
 import { UiHeader } from "@/shared/ui/ui-header";
 import { ToggleBlockingButton } from "@/features/toggle-blocking";
 import { Profile } from "@/widgets/profile";
+import { useBlockListQuery } from "@/entities/block-list";
+import { AddBlockItemForm } from "@/features/block-list";
 
 export function HomePage() {
+  const { data } = useBlockListQuery({});
   return (
     <div className={`min-h-screen flex flex-col`}>
       <UiHeader right={<Profile />} />
@@ -10,7 +13,11 @@ export function HomePage() {
         <aside className="px-5 pt-12">
           <ToggleBlockingButton />
         </aside>
-        <main>main</main>
+        <main className="pt-10 px-5">
+          <h1 className="text-2xl mb-10">Your Block List</h1>
+          <AddBlockItemForm />
+          {data?.items.length}
+        </main>
       </div>
     </div>
   );
