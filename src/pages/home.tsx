@@ -2,7 +2,7 @@ import { UiHeader } from "@/shared/ui/ui-header";
 import { ToggleBlockingButton } from "@/features/toggle-blocking";
 import { Profile } from "@/widgets/profile";
 import { useBlockListQuery } from "@/entities/block-list";
-import { AddBlockItemForm } from "@/features/block-list";
+import { AddBlockItemForm, BlockList } from "@/features/block-list";
 
 export function HomePage() {
   const { data } = useBlockListQuery({});
@@ -16,7 +16,7 @@ export function HomePage() {
         <main className="pt-10 px-5">
           <h1 className="text-2xl mb-10">Your Block List</h1>
           <AddBlockItemForm />
-          {data?.items.length}
+          <BlockList className="mt-6" />
         </main>
       </div>
     </div>
